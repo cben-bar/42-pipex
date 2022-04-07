@@ -29,6 +29,7 @@ void	parent(char **av, char **env, int *fd)
 {
 	int		fileout;
 	pid_t	pid;
+
 	pid = fork();
 	if (pid == 0)
 	{
@@ -49,7 +50,7 @@ int	main(int ac, char **av, char **env)
 	pid_t	pid;
 
 	if (ac == 5 && (((ft_strlen(av[2]) == 0) && (ft_strlen(av[3]) != 0))
-	|| ((ft_strlen(av[2]) !=0) && (ft_strlen(av[3]) == 0))))
+			|| ((ft_strlen(av[2]) != 0) && (ft_strlen(av[3]) == 0))))
 	{
 		if (pipe(fds) == -1)
 			error();
