@@ -28,14 +28,19 @@ void	child(char **av, char **env, int *fd)
 void	parent(char **av, char **env, int *fd)
 {
 	int		fileout;
-
-	fileout = open(av[4], O_WRONLY | O_CREAT | O_TRUNC, 0777);
-	if (fileout == -1)
-		error();
-	dup2(fd[0], STDIN_FILENO);
-	dup2(fileout, STDOUT_FILENO);
-	close(fd[1]);
-	execute(av[3], env);
+	pid_t	pid;
+	pid = fork();
+	if (pid == 0)
+	{
+		fileout = open(av[4], O_WRONLY | O_CREAT | O_TRUNC, 0777);
+		if (fileout == -1)
+			error();
+		dup2(fd[0], STDIN_FILENO);
+		dup2(fileout, STDOUT_FILENO);
+		close(fd[1]);
+		execute(av[3], env);
+	}
+	waitpid(pid, NULL, 0);
 }
 
 int	main(int ac, char **av, char **env)
@@ -43,7 +48,8 @@ int	main(int ac, char **av, char **env)
 	int		fds[2];
 	pid_t	pid;
 
-	if (ac == 5)
+	if (ac == 5 && (((ft_strlen(av[2]) == 0) && (ft_strlen(av[3]) != 0))
+	|| ((ft_strlen(av[2]) !=0) && (ft_strlen(av[3]) == 0))))
 	{
 		if (pipe(fds) == -1)
 			error();

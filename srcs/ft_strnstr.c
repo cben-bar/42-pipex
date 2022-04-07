@@ -12,16 +12,16 @@
 
 #include "../includes/pipex.h"
 
-static int	ft_search(const char *haystack, const char *needle, size_t i, size_t len)
+static int	ft_search(const char *hsk, const char *ndl, size_t i, size_t len)
 {
 	size_t	i_n;
 
 	i_n = 0;
-	if (needle[i_n] && i < len)
+	if (ndl[i_n] && i < len)
 	{
-		while (needle[i_n] == haystack[i] && i < len)
+		while (ndl[i_n] == hsk[i] && i < len)
 		{
-			if (needle[i_n + 1] == '\0')
+			if (ndl[i_n + 1] == '\0')
 				return (1);
 			i_n++;
 			i++;
