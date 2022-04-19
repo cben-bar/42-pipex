@@ -6,7 +6,7 @@
 /*   By: cben-bar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 04:44:01 by cben-bar          #+#    #+#             */
-/*   Updated: 2022/04/06 19:33:20 by cben-bar         ###   ########lyon.fr   */
+/*   Updated: 2022/04/07 23:43:20 by cben-bar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static int	ft_search(const char *hsk, const char *ndl, size_t i, size_t len)
 	if (ndl[i_n] && i < len)
 	{
 		while (ndl[i_n] == hsk[i] && i < len)
-		{
+		{	
 			if (ndl[i_n + 1] == '\0')
 				return (1);
 			i_n++;

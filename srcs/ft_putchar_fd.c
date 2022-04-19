@@ -1,23 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cben-bar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/02 15:42:22 by cben-bar          #+#    #+#             */
-/*   Updated: 2022/04/07 23:42:59 by cben-bar         ###   ########.fr       */
+/*   Created: 2021/11/11 00:20:09 by cben-bar          #+#    #+#             */
+/*   Updated: 2022/04/07 23:43:36 by cben-bar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/pipex.h"
 
-size_t	ft_strlen(const char *s)
+void	ft_putchar_fd(char c, int fd)
 {
-	int	counter;
-
-	counter = 0;
-	while (s[counter] != '\0')
-		counter++;
-	return (counter);
+	write(fd, &c, 1);
 }

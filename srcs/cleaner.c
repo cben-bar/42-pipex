@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   cleaner.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cben-bar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/02 15:42:22 by cben-bar          #+#    #+#             */
-/*   Updated: 2022/04/07 23:42:59 by cben-bar         ###   ########.fr       */
+/*   Created: 2022/04/19 16:52:38 by cben-bar          #+#    #+#             */
+/*   Updated: 2022/04/19 17:02:00 by cben-bar         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/pipex.h"
 
-size_t	ft_strlen(const char *s)
+void	cleaner(char **tab)
 {
-	int	counter;
+	size_t	i;
 
-	counter = 0;
-	while (s[counter] != '\0')
-		counter++;
-	return (counter);
+	i = -1;
+	while (tab[++i])
+		free(tab[i]);
+	free(tab);
 }
