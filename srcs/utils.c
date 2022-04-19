@@ -6,7 +6,7 @@
 /*   By: cben-bar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 23:31:37 by cben-bar          #+#    #+#             */
-/*   Updated: 2022/04/19 17:04:33 by cben-bar         ###   ########lyon.fr   */
+/*   Updated: 2022/04/19 17:18:38 by cben-bar         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ char	*get_path(char *cmd, char **envp, size_t j)
 		free(path);
 		j++;
 	}
-	j = -1;
 	cleaner(paths);
 	return (0);
 }
